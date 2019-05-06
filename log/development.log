@@ -1,0 +1,2054 @@
+  [1m[35m (10.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE DATABASE `employee` DEFAULT CHARACTER SET `utf8mb4`[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (74.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) COLLATE utf8_general_ci NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) COLLATE utf8_general_ci NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK('3225438620711404125', 0)[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+Migrating to CreateEmployeeMasters (20190506185321)
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE `employee_masters` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `EmployeeID` int, `EmployeeFirstName` varchar(255), `EmployeeLastName` varchar(255), `EmployeeBday` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190506185321_create_employee_masters.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190506185321')[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+Migrating to CreateDtrMasters (20190506185346)
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `dtr_masters` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `EmployeeMaster_EmployeeID` int, `DTRDateTime` datetime, `DTRType` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190506185346_create_dtr_masters.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190506185346')[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-05-06 18:55:01', '2019-05-06 18:55:01')[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('3225438620711404125')[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/bin/rake:23
+Started GET "/" for ::1 at 2019-05-06 15:56:07 -0300
+  [1m[35m (2.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 650ms (Views: 634.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/employee_masters/new" for ::1 at 2019-05-06 15:56:13 -0300
+Processing by EmployeeMastersController#new as HTML
+  Rendering employee_masters/new.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (33.6ms)
+  Rendered employee_masters/new.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 93ms (Views: 62.3ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/employee_masters" for ::1 at 2019-05-06 15:56:21 -0300
+Processing by EmployeeMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xRMqALINncydSpyt71z7QFT3j8T2wkTBJYaqKb1G2xO8B2lGB//IRmoTmMAMCNasmKGdfYpfdmj8R/wOYr0/eA==", "employee_master"=>{"EmployeeID"=>"321321", "EmployeeFirstName"=>"323", "EmployeeLastName"=>"3232", "EmployeeBday(1i)"=>"2019", "EmployeeBday(2i)"=>"5", "EmployeeBday(3i)"=>"6", "EmployeeBday(4i)"=>"18", "EmployeeBday(5i)"=>"56"}, "commit"=>"Create Employee master"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employee_masters_controller.rb:30
+  [1m[36mEmployeeMaster Create (1.5ms)[0m  [1m[32mINSERT INTO `employee_masters` (`EmployeeID`, `EmployeeFirstName`, `EmployeeLastName`, `EmployeeBday`, `created_at`, `updated_at`) VALUES (321321, '323', '3232', '2019-05-06 18:56:00', '2019-05-06 18:56:21', '2019-05-06 18:56:21')[0m
+  ↳ app/controllers/employee_masters_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employee_masters_controller.rb:30
+Redirected to http://localhost:3000/employee_masters/1
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/employee_masters/1" for ::1 at 2019-05-06 15:56:21 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:67
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 20.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 15:56:24 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 26.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/employee_masters/1/edit" for ::1 at 2019-05-06 15:56:41 -0300
+Processing by EmployeeMastersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployeeMaster Load (2.1ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:67
+  Rendering employee_masters/edit.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (9.0ms)
+  Rendered employee_masters/edit.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 40ms (Views: 31.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/employee_masters/1/edit" for ::1 at 2019-05-06 15:56:51 -0300
+Processing by EmployeeMastersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployeeMaster Load (3.7ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:67
+  Rendering employee_masters/edit.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (6.6ms)
+  Rendered employee_masters/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 78ms (Views: 68.5ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/employee_masters/1" for ::1 at 2019-05-06 15:56:55 -0300
+Processing by EmployeeMastersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T2ocAg2SoJiDBPr0mHMlAVUszbYrvtYPL2Px9dcCzUUNkAjlElKKtW3n+WQHPrLiI/YLY1P2pMQcse5qQOyocA==", "id"=>"1"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:67
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employee_masters_controller.rb:57
+  [1m[36mEmployeeMaster Destroy (3.8ms)[0m  [1m[31mDELETE FROM `employee_masters` WHERE `employee_masters`.`id` = 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:57
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employee_masters_controller.rb:57
+Redirected to http://localhost:3000/employee_masters
+Completed 302 Found in 10ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 15:56:55 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employee_masters/new" for ::1 at 2019-05-06 15:56:56 -0300
+Processing by EmployeeMastersController#new as HTML
+  Rendering employee_masters/new.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (7.8ms)
+  Rendered employee_masters/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employee_masters" for ::1 at 2019-05-06 15:57:01 -0300
+Processing by EmployeeMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iV26NCM9iReoDUatf6jJ/QoLMJAZw5jEI4DOSpHBWdXwSflyls/cnV9UQsCc/OQRxl0iKWVeqm36QZhtTjq9vg==", "employee_master"=>{"EmployeeID"=>"1212", "EmployeeFirstName"=>"122", "EmployeeLastName"=>"21212", "EmployeeBday(1i)"=>"2019", "EmployeeBday(2i)"=>"5", "EmployeeBday(3i)"=>"6", "EmployeeBday(4i)"=>"18", "EmployeeBday(5i)"=>"56"}, "commit"=>"Create Employee master"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employee_masters_controller.rb:30
+  [1m[36mEmployeeMaster Create (1.7ms)[0m  [1m[32mINSERT INTO `employee_masters` (`EmployeeID`, `EmployeeFirstName`, `EmployeeLastName`, `EmployeeBday`, `created_at`, `updated_at`) VALUES (1212, '122', '21212', '2019-05-06 18:56:00', '2019-05-06 18:57:01', '2019-05-06 18:57:01')[0m
+  ↳ app/controllers/employee_masters_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employee_masters_controller.rb:30
+Redirected to http://localhost:3000/employee_masters/2
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 15:57:01 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:67
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/employee_masters/2/edit" for ::1 at 2019-05-06 15:57:03 -0300
+Processing by EmployeeMastersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.2ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:67
+  Rendering employee_masters/edit.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (10.1ms)
+  Rendered employee_masters/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 44ms (Views: 36.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 15:57:04 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 16:00:58 -0300
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  Rendered employee_masters/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:27: syntax error, unexpected tSTRING_DEND, expecting ')'
+master_path(employee_master) } );@output_buffer.safe_append=
+                              ^
+/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/employee_masters/index.html.erb:27: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/employee_masters/index.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+app/views/employee_masters/index.html.erb:39: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/employee_masters/index.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/employee_masters" for ::1 at 2019-05-06 16:01:20 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 231ms (Views: 222.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 16:35:13 -0300
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (3.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 62ms (Views: 45.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/employee_masters/2/changeTime" for ::1 at 2019-05-06 16:35:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/employee_masters/2/changeTime"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/employee_masters/2/changeTime" for ::1 at 2019-05-06 16:35:37 -0300
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/employee_masters/2/changeTime"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-05-06 16:53:22 -0300
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (1.0ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 279ms (Views: 254.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 16:53:25 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (3.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (25.2ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `dtr_masters' for #<EmployeeMaster:0x007fd81f57fc70>
+Did you mean?  dtl_masters
+               dtl_masters=):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__920223211427721063_70283107755220'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 16:54:07 -0300
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.9ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (30.0ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'dtr_masters.employee_master_id' in 'where clause': SELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = 2):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__891683384390852144_70117162837440'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 16:56:11 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant EmployeeMaster::Dtrmaster):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__891683384390852144_70117135566120'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 16:59:33 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant EmployeeMaster::Dtrmaster):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__891683384390852144_70117162271420'
+Started GET "/" for ::1 at 2019-05-06 17:01:00 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 234ms (Views: 225.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:01:03 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.7ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.9ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'dtr_masters.employee_master_id' in 'where clause': SELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = 2):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__891683384390852144_70117183372200'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:03:03 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.1ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = NULL[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'dtr_masters.employee_master_id' in 'where clause': SELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = NULL):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__891683384390852144_70117185567380'
+Started GET "/" for ::1 at 2019-05-06 17:03:12 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 50ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:03:14 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (2.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = NULL[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'dtr_masters.employee_master_id' in 'where clause': SELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`employee_master_id` = NULL):
+    21: </p>
+    22: 
+    23: <h2>In/Out</h2>
+    24: <% @employee_master.dtr_masters.each do |dtr_master| %>
+    25:   <p>
+    26:     <strong>DTRType:</strong>
+    27:     <%= dtr_master.DTRType %>
+  
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb__891683384390852144_70117139250220'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:03:44 -0300
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 241ms (Views: 211.9ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:04:20 -0300
+  
+ActionController::RoutingError (uninitialized constant DtrMastersController):
+  
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:06:25 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 83ms (Views: 60.3ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:06:29 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KRYwnLOQjHeUh3NjKcUpik6K1KSYJ5piur7coWRjRIBr7CR7rFCmWnpkcPO2iL5pOFASceBv6KmJbMM+840htQ==", "DTRType"=>"out", "dtr_master"=>{"DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"20", "DTRDateTime(5i)"=>"06"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.9ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters
+Completed 302 Found in 16ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 17:06:29 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:06:31 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:08:09 -0300
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 198ms (Views: 178.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:08:12 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 106ms (Views: 94.7ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:08:15 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qqdwMPZLdunua2h1hKN4dn2+LmRIvOLXFAtvmXusmwqfggwHpcU0MQaDcSkn6QVnJ2unYFIcCOfOUhiZuJD78Q==", "DTRType"=>"in", "dtr_master"=>{"DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"20", "DTRDateTime(5i)"=>"08"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ (pry):2
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ (pry):2
+#<ActiveModel::Errors:0x007fc62e2dc070 @base=#<DtrMaster id: nil, EmployeeMaster_EmployeeID: 2, DTRDateTime: "2019-05-06 20:08:00", DTRType: nil, created_at: nil, updated_at: nil>, @messages={:employee_master=>["must exist"]}, @details={:employee_master=>[{:error=>:blank}]}>
+Redirected to http://localhost:3000/employee_masters
+Completed 302 Found in 139578ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 17:10:35 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.7ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 89ms (Views: 76.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:10:42 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (9.1ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.2ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 93ms (Views: 64.0ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:10:44 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hOI1iIzA1JWKyRdbwcQ1ut9VnnI6lBviAdA6NzC7LxOxx0m/306WTWIhDgdijkirhYAXdiA08dLbiU0384dP6A==", "DTRType"=>"in", "dtr_master"=>{"DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"20", "DTRDateTime(5i)"=>"10"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (1.1ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (4.8ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 20:10:00', '2019-05-06 20:10:45', '2019-05-06 20:10:45')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.1
+Completed 302 Found in 20373ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/employee_masters.1" for ::1 at 2019-05-06 17:11:05 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 85ms (Views: 55.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:11:14 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (4.1ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (2.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 68ms (Views: 50.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:12:16 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 59ms (Views: 42.1ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:12:19 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XzED1qP0Jpqoa8B8t2Qey5Wcyf63/QEo9E/nXag4elQdyxcxvDQMt0aIw+woKYko40YPK8+1c+PHnfjCP9YfYQ==", "dtr_master_DTRType"=>"in", "dtr_master"=>{"DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"20", "DTRDateTime(5i)"=>"12"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.7ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (0.4ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 20:12:00', '2019-05-06 20:12:19', '2019-05-06 20:12:19')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.2
+Completed 302 Found in 32314ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/employee_masters.2" for ::1 at 2019-05-06 17:12:51 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 92ms (Views: 61.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employee_masters.2" for ::1 at 2019-05-06 17:13:01 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 83ms (Views: 54.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:13:02 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 72ms (Views: 63.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:13:05 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YLRoYGYN/cZ1L9MUqamR9aikOweZNI5J89I8vZdd+2VVkRRXNYO/Hp3HykgK4+zk8nGyA4OUZHkpi0u9VGGbng==", "dtr_master"=>{"DTRType"=>"in", "DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"20", "DTRDateTime(5i)"=>"13"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.7ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (0.6ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 20:13:00', 'in', '2019-05-06 20:13:05', '2019-05-06 20:13:05')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.3
+Completed 302 Found in 17ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/employee_masters.3" for ::1 at 2019-05-06 17:13:05 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 62ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:13:07 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.0ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 58ms (Views: 52.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:13:10 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"deZ03xbC0gi57U8p+GQKd6+wEGdfNfpjHS9H96fm1EZAwwjoRUyQ0FEFVnVbLndm9WWZY0WVEFPHdjD3ZNq0vQ==", "dtr_master"=>{"DTRType"=>"out", "DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"20", "DTRDateTime(5i)"=>"13"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (1.8ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 20:13:00', 'out', '2019-05-06 20:13:10', '2019-05-06 20:13:10')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.4
+Completed 302 Found in 15ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/employee_masters.4" for ::1 at 2019-05-06 17:13:10 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 59ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:13:12 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (6.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 64ms (Views: 50.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:14:43 -0300
+  [1m[35m (2.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.2ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 258ms (Views: 228.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:15:09 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (293.9ms)
+Completed 500 Internal Server Error in 307ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `employee_master' for #<#<Class:0x007fcd8b15c9c0>:0x007fcd8af6c2c8>
+Did you mean?  @employee_master
+               employee_master_url):
+    1: <p id="notice"><%= employee_master %></p>
+    2: 
+    3: <p>
+    4:   <strong>Employeeid:</strong>
+  
+app/views/employee_masters/show.html.erb:1:in `_app_views_employee_masters_show_html_erb___1150094163766307584_70260388226640'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:15:19 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.0ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.0ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 47ms (Views: 41.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:16:27 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.9ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 46ms (Views: 37.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:16:55 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:17:18 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:17:35 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (1.2ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:17
+  Rendered employee_masters/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:18:19 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:18:31 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.8ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:19:22 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.7ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 43ms (Views: 39.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:19:41 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 79ms (Views: 67.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:25:17 -0300
+  [1m[35m (3.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (1.5ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (29.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `dir_masters' for #<EmployeeMaster:0x007fcd8b619080>
+Did you mean?  dtr_masters
+               dtr_masters=):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%= employee_master.dir_masters.where(DTRType: 'out').DTRDateTime - employee_master.dir_masters.where(DTRType: 'in').DTRDateTime%></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260436768920'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260436768920'
+Started GET "/" for ::1 at 2019-05-06 17:25:44 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.6ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' LIMIT 11[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered employee_masters/index.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `DTRDateTime' for #<DtrMaster::ActiveRecord_AssociationRelation:0x007fcd8b331ed0>):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%= employee_master.dtr_masters.where(DTRType: 'out').DTRDateTime - employee_master.dtr_masters.where(DTRType: 'in').DTRDateTime%></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260390353360'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260390353360'
+Started GET "/" for ::1 at 2019-05-06 17:26:21 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (1.0ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (20.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::DTRDateTime):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%= employee_master.dtr_masters.where(DTRType: 'out').select(DTRDateTime) - employee_master.dtr_masters.where(DTRType: 'in').select(DTRDateTime)%></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260436984660'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260436984660'
+Started GET "/" for ::1 at 2019-05-06 17:26:51 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::DTRDateTime):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%= employee_master.dtr_masters.where(DTRType: 'out').select(DTRDateTime) %></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260390236440'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260390236440'
+Started GET "/" for ::1 at 2019-05-06 17:32:45 -0300
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (1.7ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 68ms (Views: 60.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:33:15 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.2ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (2.1ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 61ms (Views: 49.1ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:33:32 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kmohyn0u0Kn+AKXuexoKpvjTkhI7qFxVpqqFDolZQAunT139LqCScRbovLLYUHe3ogYbFiEItmV88/IOSmUg8A==", "dtr_master"=>{"DTRType"=>"out", "DTRDateTime(1i)"=>"2019", "DTRDateTime(2i)"=>"5", "DTRDateTime(3i)"=>"6", "DTRDateTime(4i)"=>"16", "DTRDateTime(5i)"=>"33"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (1.1ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 17:33:00', 'out', '2019-05-06 17:33:32', '2019-05-06 17:33:32')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.5
+Completed 302 Found in 23ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/employee_masters.5" for ::1 at 2019-05-06 17:33:32 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 46.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:33:34 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (8.0ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.2ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 90ms (Views: 72.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:35:24 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:35:51 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 59ms (Views: 50.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:36:07 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.2ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 36ms (Views: 28.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:36:41 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xlVR6qNUEM/r+9S145/yYr8L/JAWlCrjiyBuQMgyBmKEr0UNvJQ64gUY1yV80mWBydE6RW7cWCi48nHfX9xjVw==", "dtr_master"=>{"DTRType"=>"out"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (2.1ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRType`, `created_at`, `updated_at`) VALUES (2, 'out', '2019-05-06 17:36:41', '2019-05-06 17:36:41')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.6
+Completed 302 Found in 15ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/employee_masters.6" for ::1 at 2019-05-06 17:36:41 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 66ms (Views: 42.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:36:42 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.7ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    29:  
+    30:   <p>
+    31:     <strong>DTRDateTime:</strong>
+    32:     <%= dtr_master.DTRDateTime.strftime('%Y-%m-%d %H:%M') %>
+    33:   </p>
+    34: <% end %>
+    35: 
+  
+app/views/employee_masters/show.html.erb:32:in `block in _app_views_employee_masters_show_html_erb___1150094163766307584_70260439655060'
+app/views/employee_masters/show.html.erb:24:in `_app_views_employee_masters_show_html_erb___1150094163766307584_70260439655060'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:38:51 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  Rendered employee_masters/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/zoey/demo/employee/app/views/employee_masters/show.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/zoey/demo/employee/app/views/employee_masters/show.html.erb:60: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/zoey/demo/employee/app/views/employee_masters/show.html.erb:62: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/employee_masters/show.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+app/views/employee_masters/show.html.erb:60: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/employee_masters/show.html.erb:62: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:39:06 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (116.6ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `hidden_filed' for #<ActionView::Helpers::FormBuilder:0x007fcd90ca5fc0>
+Did you mean?  hidden_field):
+    44:   <p>
+    45:     <%= f.label :DTRDateTime %><br>
+    46:     <%#= f.datetime_select :DTRDateTime %>
+    47:     <%= f.hidden_filed :DTRDateTime,Time.now()%>
+    48:     <%= Time.now().strftime('%Y-%m-%d %H:%M')%>
+    49:   </p>
+    50:   <p>
+  
+app/views/employee_masters/show.html.erb:47:in `block in _app_views_employee_masters_show_html_erb___1150094163766307584_70260391803280'
+app/views/employee_masters/show.html.erb:38:in `_app_views_employee_masters_show_html_erb___1150094163766307584_70260391803280'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:39:20 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 2019-05-06 17:39:20 -0300:Time):
+    44:   <p>
+    45:     <%= f.label :DTRDateTime %><br>
+    46:     <%#= f.datetime_select :DTRDateTime %>
+    47:     <%= f.hidden_field :DTRDateTime,Time.now()%>
+    48:     <%= Time.now().strftime('%Y-%m-%d %H:%M')%>
+    49:   </p>
+    50:   <p>
+  
+app/views/employee_masters/show.html.erb:47:in `block in _app_views_employee_masters_show_html_erb___1150094163766307584_70260397379700'
+app/views/employee_masters/show.html.erb:38:in `_app_views_employee_masters_show_html_erb___1150094163766307584_70260397379700'
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:40:11 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.2ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.7ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 94ms (Views: 75.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:40:16 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ay8WsBxQKA4XeaWLBmeKoJiIX64zpVh6/znk+L3Zn2Ep1QJXA5ACI/maphuZKh1D7lKZe0vtKrHM6/tnKjf6VA==", "dtr_master"=>{"DTRType"=>"in", "DTRDateTime"=>"2019-05-06 17:40:11 -0300"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (1.9ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 17:40:11', 'in', '2019-05-06 17:40:16', '2019-05-06 17:40:16')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.7
+Completed 302 Found in 21ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:40:16 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (1.6ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  Rendered employee_masters/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 62ms (Views: 35.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:40:18 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.1ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 56ms (Views: 47.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:41:51 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 71ms (Views: 40.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:42:04 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 67ms (Views: 37.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:42:36 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 67ms (Views: 40.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:43:06 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 86ms (Views: 54.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:43:23 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 75ms (Views: 43.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:43:39 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 73ms (Views: 46.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:43:54 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 96ms (Views: 62.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:44:11 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 69ms (Views: 39.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:44:37 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 81ms (Views: 52.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:44:48 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 68ms (Views: 38.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:45:16 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 71ms (Views: 38.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:45:19 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.9ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 37ms (Views: 30.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/employee_masters.7" for ::1 at 2019-05-06 17:45:27 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 66ms (Views: 36.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/employee_masters/new" for ::1 at 2019-05-06 17:45:31 -0300
+Processing by EmployeeMastersController#new as HTML
+  Rendering employee_masters/new.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (12.4ms)
+  Rendered employee_masters/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employee_masters" for ::1 at 2019-05-06 17:45:36 -0300
+Processing by EmployeeMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1fXdSDSgvaC3TdCwuB8V1Ey0JuiOVjtEFACAG+wiJbSs4Z4OgVLoKkAU1N1bSzg4gOI0UfLLCe3NwdY8M9nB3w==", "employee_master"=>{"EmployeeID"=>"222", "EmployeeFirstName"=>"222", "EmployeeLastName"=>"2222", "EmployeeBday(1i)"=>"2019", "EmployeeBday(2i)"=>"5", "EmployeeBday(3i)"=>"6", "EmployeeBday(4i)"=>"16", "EmployeeBday(5i)"=>"45"}, "commit"=>"Create Employee master"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employee_masters_controller.rb:33
+  [1m[36mEmployeeMaster Create (0.8ms)[0m  [1m[32mINSERT INTO `employee_masters` (`EmployeeID`, `EmployeeFirstName`, `EmployeeLastName`, `EmployeeBday`, `created_at`, `updated_at`) VALUES (222, '222', '2222', '2019-05-06 17:45:00', '2019-05-06 17:45:36', '2019-05-06 17:45:36')[0m
+  ↳ app/controllers/employee_masters_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employee_masters_controller.rb:33
+Redirected to http://localhost:3000/employee_masters/3
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/employee_masters/3" for ::1 at 2019-05-06 17:45:36 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.8ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/employee_masters/3/dtr_masters" for ::1 at 2019-05-06 17:45:42 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XTNAJ+lQOCvfqd6B4T2HoGtvbhxEtED7K5kNkoMfUrwfyVTA9pASBjFK3RF+cBBDHbWoyTz8MjAYSxINFPE3iQ==", "dtr_master"=>{"DTRType"=>"in", "DTRDateTime"=>"2019-05-06 17:45:36 -0300"}, "commit"=>"Create Dtr master", "employee_master_id"=>"3"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (0.4ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (3, '2019-05-06 17:45:36', 'in', '2019-05-06 17:45:42', '2019-05-06 17:45:42')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.8
+Completed 302 Found in 13ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/employee_masters.8" for ::1 at 2019-05-06 17:45:42 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (25.6ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `DTRDateTime' for nil:NilClass):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%=  (employee_master.dtr_masters.where(DTRType: 'out').last.DTRDateTime - employee_master.dtr_masters.where(DTRType: 'in').first.DTRDateTime)/3600%></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260390645860'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260390645860'
+Started GET "/employee_masters.8" for ::1 at 2019-05-06 17:46:32 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  Rendered employee_masters/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:24: syntax error, unexpected tLABEL
+@output_buffer.append=(  (try:(employee_master.dtr_masters.w
+                              ^
+/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:24: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+out').last.DTRDateTime) - try:(employee_master.dtr_masters.w
+                              ^
+/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:24: syntax error, unexpected ')', expecting keyword_end
+in').first.DTRDateTime))/3600);@output_buffer.safe_append='<
+                              ^
+/Users/zoey/demo/employee/app/views/employee_masters/index.html.erb:38: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/employee_masters/index.html.erb:24: syntax error, unexpected tLABEL
+app/views/employee_masters/index.html.erb:24: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/views/employee_masters/index.html.erb:24: syntax error, unexpected ')', expecting keyword_end
+app/views/employee_masters/index.html.erb:38: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/employee_masters.8" for ::1 at 2019-05-06 17:47:25 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.6ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mCACHE DtrMaster Load (0.0ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mCACHE DtrMaster Load (0.0ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `DTRDateTime?' for nil:NilClass):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%= employee_master.dtr_masters.where(DTRType: 'out').last.DTRDateTime? && employee_master.dtr_masters.where(DTRType: 'in').first.DTRDateTime? ? (employee_master.dtr_masters.where(DTRType: 'out').last.DTRDateTime - employee_master.dtr_masters.where(DTRType: 'in').first.DTRDateTime)/3600 : ''%></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260386330800'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260386330800'
+Started GET "/employee_masters.8" for ::1 at 2019-05-06 17:47:56 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' LIMIT 11[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  Rendered employee_masters/index.html.erb within layouts/application (25.5ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `last?' for #<DtrMaster::ActiveRecord_AssociationRelation:0x007fcd90b031b8>
+Did you mean?  last
+               last!):
+    21:         <td><%= employee_master.EmployeeFirstName %></td>
+    22:         <td><%= employee_master.EmployeeLastName %></td>
+    23:         <td><%= employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %></td>
+    24:          <td><%= employee_master.dtr_masters.where(DTRType: 'out').last? && employee_master.dtr_masters.where(DTRType: 'in').first? ? (employee_master.dtr_masters.where(DTRType: 'out').last.DTRDateTime - employee_master.dtr_masters.where(DTRType: 'in').first.DTRDateTime)/3600 : ''%></td>
+    25:         <td><%= link_to 'Show', employee_master %></td>
+    26:         <td><%= link_to 'Edit', edit_employee_master_path(employee_master) %></td>
+    27:         <td><%= link_to 'Destroy', employee_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/employee_masters/index.html.erb:24:in `block in _app_views_employee_masters_index_html_erb__559366728241092523_70260391714620'
+app/views/employee_masters/index.html.erb:18:in `_app_views_employee_masters_index_html_erb__559366728241092523_70260391714620'
+Started GET "/employee_masters.8" for ::1 at 2019-05-06 17:48:19 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 98ms (Views: 65.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/employee_masters/3" for ::1 at 2019-05-06 17:48:23 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployeeMaster Load (0.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.7ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 44ms (Views: 37.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/employee_masters/3/dtr_masters" for ::1 at 2019-05-06 17:48:27 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X/EbmkhCHslfBcf+uZ/4zL5ReyIUgnCvPN9X1xHBP92KTEzBBMjBE4BYvlM4eVEdyzQzcpSPZFCFzLELtDXt7g==", "dtr_master"=>{"DTRType"=>"out", "DTRDateTime"=>"2019-05-06 17:48:23 -0300"}, "commit"=>"Create Dtr master", "employee_master_id"=>"3"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (0.7ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (3, '2019-05-06 17:48:23', 'out', '2019-05-06 17:48:27', '2019-05-06 17:48:27')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters.9
+Completed 302 Found in 16ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/employee_masters.9" for ::1 at 2019-05-06 17:48:27 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (1.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 69ms (Views: 42.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/employee_masters.9" for ::1 at 2019-05-06 17:50:00 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 97ms (Views: 64.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/employee_masters.9" for ::1 at 2019-05-06 17:50:15 -0300
+Processing by EmployeeMastersController#index as 
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 78ms (Views: 49.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:50:30 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 60ms (Views: 43.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:50:33 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.8ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:50:35 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 52ms (Views: 43.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/employee_masters/2/dtr_masters" for ::1 at 2019-05-06 17:50:39 -0300
+Processing by DtrMastersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vOEdYWM17YYBGa0U9yzXScY1QLYDw+CkGbZ7Kv83xHf1vhC1gKVbvDsf+jwls5Mfc1cBsKv5bJKP67saMC/6g==", "dtr_master"=>{"DTRType"=>"out", "DTRDateTime"=>"2019-05-06 17:50:35 -0300"}, "commit"=>"Create Dtr master", "employee_master_id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.4ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mEmployeeMaster Load (1.1ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[36mDtrMaster Create (0.8ms)[0m  [1m[32mINSERT INTO `dtr_masters` (`EmployeeMaster_EmployeeID`, `DTRDateTime`, `DTRType`, `created_at`, `updated_at`) VALUES (2, '2019-05-06 17:50:35', 'out', '2019-05-06 17:50:39', '2019-05-06 17:50:39')[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dtr_masters_controller.rb:4
+Redirected to http://localhost:3000/employee_masters
+Completed 302 Found in 19ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 17:50:39 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.3ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.8ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 36ms (Views: 30.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-06 17:54:24 -0300
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/zoey/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (2.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (1.3ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 303ms (Views: 275.9ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:54:28 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 61ms (Views: 52.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/employee_masters/3" for ::1 at 2019-05-06 17:54:32 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployeeMaster Load (0.8ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:54:36 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.2ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (6.9ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 77ms (Views: 62.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/employee_masters/2/edit" for ::1 at 2019-05-06 17:54:47 -0300
+Processing by EmployeeMastersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (1.9ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/edit.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (18.7ms)
+  Rendered employee_masters/edit.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 74ms (Views: 67.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:54:52 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (5.1ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (1.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 63ms (Views: 50.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/employee_masters" for ::1 at 2019-05-06 17:54:56 -0300
+Processing by EmployeeMastersController#index as HTML
+  Rendering employee_masters/index.html.erb within layouts/application
+  [1m[36mEmployeeMaster Load (2.7ms)[0m  [1m[34mSELECT `employee_masters`.* FROM `employee_masters`[0m
+  ↳ app/views/employee_masters/index.html.erb:18
+  [1m[36mDtrMaster Load (1.3ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.5ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (1.0ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.8ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.6ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in'[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'out' ORDER BY `dtr_masters`.`id` DESC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT  `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 3 AND `dtr_masters`.`DTRType` = 'in' ORDER BY `dtr_masters`.`id` ASC LIMIT 1[0m
+  ↳ app/views/employee_masters/index.html.erb:24
+  Rendered employee_masters/index.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 64ms (Views: 53.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/employee_masters/2/edit" for ::1 at 2019-05-06 17:54:57 -0300
+Processing by EmployeeMastersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (2.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/edit.html.erb within layouts/application
+  Rendered employee_masters/_form.html.erb (7.0ms)
+  Rendered employee_masters/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 53ms (Views: 46.0ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/employee_masters/2" for ::1 at 2019-05-06 17:55:00 -0300
+Processing by EmployeeMastersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3PrG1fK7R4aPrM1Ab1iHOiEkWqNtudEQ33z+AQuWygdIimN6FO+q02HNOnZRSrfNb+cOmggZA1MZUf2y44ffHA==", "employee_master"=>{"EmployeeID"=>"1212", "EmployeeFirstName"=>"122", "EmployeeLastName"=>"21212fsdfds", "EmployeeBday(1i)"=>"2019", "EmployeeBday(2i)"=>"5", "EmployeeBday(3i)"=>"6", "EmployeeBday(4i)"=>"17", "EmployeeBday(5i)"=>"56"}, "commit"=>"Update Employee master", "id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.5ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employee_masters_controller.rb:47
+  [1m[36mEmployeeMaster Update (2.3ms)[0m  [1m[33mUPDATE `employee_masters` SET `EmployeeLastName` = '21212fsdfds', `updated_at` = '2019-05-06 17:55:00' WHERE `employee_masters`.`id` = 2[0m
+  ↳ app/controllers/employee_masters_controller.rb:47
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employee_masters_controller.rb:47
+Redirected to http://localhost:3000/employee_masters/2
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/employee_masters/2" for ::1 at 2019-05-06 17:55:00 -0300
+Processing by EmployeeMastersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployeeMaster Load (0.6ms)[0m  [1m[34mSELECT  `employee_masters`.* FROM `employee_masters` WHERE `employee_masters`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/employee_masters_controller.rb:70
+  Rendering employee_masters/show.html.erb within layouts/application
+  [1m[36mDtrMaster Load (0.4ms)[0m  [1m[34mSELECT `dtr_masters`.* FROM `dtr_masters` WHERE `dtr_masters`.`EmployeeMaster_EmployeeID` = 2[0m
+  ↳ app/views/employee_masters/show.html.erb:24
+  Rendered employee_masters/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 1.0ms)
+
+

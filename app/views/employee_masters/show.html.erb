@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employeeid:</strong>
+  <%= @employee_master.EmployeeID %>
+</p>
+
+<p>
+  <strong>Employeefirstname:</strong>
+  <%= @employee_master.EmployeeFirstName %>
+</p>
+
+<p>
+  <strong>Employeelastname:</strong>
+  <%= @employee_master.EmployeeLastName %>
+</p>
+
+<p>
+  <strong>Employeebday:</strong>
+  <%= @employee_master.EmployeeBday.strftime('%Y-%m-%d %H:%M') %>
+</p>
+
+<h2>TimeIN/TimeOUT</h2>
+<% @employee_master.dtr_masters.each do |dtr_master| %>
+  <p>
+    <strong>DTRType:</strong>
+    <%= dtr_master.DTRType %>
+  </p>
+ 
+  <p>
+    <strong>DTRDateTime:</strong>
+    <%= dtr_master.DTRDateTime.strftime('%Y-%m-%d %H:%M') %>
+  </p>
+<% end %>
+
+
+<h2>Add TimeIN/TimeOUT:</h2>
+<%= form_for([@employee_master, @employee_master.dtr_masters.build]) do |f| %>
+  <p>
+    <%= f.label :DTRType %><br>
+     <%= select_tag('dtr_master[DTRType]', options_for_select([['please choose', ''],['in', 'in'], ['out', 'out']], params[:DTRType])) %>
+
+  </p>
+  <p>
+    <%= f.label :DTRDateTime %><br>
+    <%#= f.datetime_select :DTRDateTime %>
+    <%= f.hidden_field :DTRDateTime,value: Time.now()%>
+    <%= Time.now().strftime('%Y-%m-%d %H:%M')%>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_employee_master_path(@employee_master) %> |
+<%= link_to 'Back', employee_masters_path %>
